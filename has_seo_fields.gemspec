@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
   # s.add_runtime_dependency "rest-client"
 
   s.add_dependency "activerecord", "~> 3.0"
+  s.add_dependency "activesupport", "~> 3.0.0"
   s.add_development_dependency "bundler", ">= 1.0.0"
   s.add_development_dependency "rspec", "~> 2.7"
   s.add_development_dependency "sqlite3-ruby"
