@@ -10,9 +10,10 @@ module HasSeoFields
 
   module ClassMethods
     def has_seo_fields *args
+      const_set "SEO_NAMES", args
+
       args.each do |field|
         define_method "seo_#{field}" do
-
         end
       end
 
