@@ -12,6 +12,4 @@ ActiveRecord::Schema.define do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "seo_fields", ["optimizable_id", "optimizable_type"], :name => "seo_fields_optimizable_index"
 end
