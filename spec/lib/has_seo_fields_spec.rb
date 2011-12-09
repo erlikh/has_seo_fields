@@ -22,7 +22,6 @@ describe HasSeoFields do
     it "returns nil if nothing founded" do
       subject.seo_title.should be_nil
     end
-
   end
 
   context "setters" do
@@ -37,6 +36,11 @@ describe HasSeoFields do
         subject.seo_h1_tag='Cool city'
         subject.seo_fields.should have(1).item
         subject.seo_fields.find_by_name('seo_h1_tag').value.should eql('Cool city')
+      end
+
+      it "does not creates entries with empty strings as values" do
+        subject.seo_h1_tag=''
+        subject.seo_fields.should have(0).items
       end
     end
 

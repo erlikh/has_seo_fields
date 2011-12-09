@@ -21,7 +21,7 @@ module HasSeoFields
         define_method "#{getter_name}=" do |value|
           if (field = seo_fields.find_by_name getter_name)
             field.update_attribute :value, value
-          else
+          elsif value.present?
             seo_fields.create :name => getter_name, :value => value
           end
         end
@@ -29,9 +29,6 @@ module HasSeoFields
       end
       const_set "SEO_NAMES", args
     end
-  end
-
-  module InstanceMethods
   end
 end
 
