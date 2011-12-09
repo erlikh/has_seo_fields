@@ -7,7 +7,7 @@ Gem::Specification.new do |s|
   s.version     = HasSeoFields::VERSION
   s.authors     = ["Nick Erlikh"]
   s.email       = ["n.erlikh@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/erlikh/has_seo_fields"
   s.summary     = %q{Allows to easily add SEO fields for models}
   s.description = %q{Allows to easily add SEO fields for models}
 
