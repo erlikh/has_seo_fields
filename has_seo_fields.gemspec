@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.email       = ["n.erlikh@gmail.com"]
   s.homepage    = ""
   s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.description = %q{Allow to easily add SEO fields for models}
 
   s.rubyforge_project = "has_seo_fields"
 
