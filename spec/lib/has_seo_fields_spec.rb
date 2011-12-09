@@ -9,7 +9,20 @@ describe HasSeoFields do
   end
 
   it "sets SEO_NAMES" do
-    subject.class::SEO_NAMES.should eql([:h1_tag, :title])
+    subject.class::SEO_NAMES.should eql(['seo_h1_tag', 'seo_title'])
+  end
+
+  context "getters" do
+
+    it "finds existing record by the name" do
+      subject.seo_fields.create :name => 'seo_h1_tag', :value => 'Cool!'
+      subject.seo_h1_tag.should eql('Cool!')
+    end
+
+    it "returns nil if nothing founded" do
+      subject.seo_title.should be_nil
+    end
+
   end
 
   context "setters" do
@@ -18,11 +31,12 @@ describe HasSeoFields do
       subject.should respond_to('seo_h1_tag=', 'seo_title=')
     end
 
-    describe "seo field with that name does not exists" do
+    describe "seo field with name that does not exists" do
 
-      it "create needed seo field with given value" do
+      it "creates needed seo field with given value" do
         subject.seo_h1_tag='Cool city'
-        subject.seo_fields.where(:name => 'seo_h1_tag').should have(1).item
+        subject.seo_fields.should have(1).item
+        subject.seo_fields.find_by_name('seo_h1_tag').value.should eql('Cool city')
       end
     end
 
